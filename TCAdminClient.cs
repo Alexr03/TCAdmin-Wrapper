@@ -5,10 +5,16 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using Extensions;
+    using TCAdmin.SDK;
     using TCAdmin.SDK.Objects;
 
     public class TcAdminClient
     {
+        public static TcAdminClient Instance;
+
+        public TCAdminClientConfiguration Configuration { get; }
+
         private readonly string _mySqlString;
         private readonly bool _encrypted;
 
@@ -16,11 +22,14 @@
 
         private Server MasterServer { get; }
 
-        public TcAdminClient(string mySqlString, bool encrypted)
+        public TcAdminClient(TCAdminClientConfiguration configuration)
         {
+            //Store Configuration
+            Configuration = configuration;
+
             //Initialise and set the MySQL information required for TCAdmin to function.
-            _mySqlString = mySqlString;
-            _encrypted = encrypted;
+            _mySqlString = configuration.MySQLString;
+            _encrypted = configuration.MySQLEncrypted;
             Initialize();
 
             SystemUser = new User(2);
@@ -31,6 +40,7 @@
         {
             TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.MySql.ConnectionString.Encrypted", _encrypted.ToString());
             TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.MySql.ConnectionString", _mySqlString);
+            Instance = this;
         }
 
         private Server GetMaster()

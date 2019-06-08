@@ -110,9 +110,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\GameNotFoundException.cs" />
+    <Compile Include="Extensions\GameExtensions.cs" />
+    <Compile Include="Extensions\LogManagerExtensions.cs" />
     <Compile Include="Extensions\ServerExtensions.cs" />
+    <Compile Include="Objects\TaskData.cs" />
     <Compile Include="TCAdminClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCAdminClientConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
