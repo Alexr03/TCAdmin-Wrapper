@@ -15,9 +15,6 @@
 
         public TCAdminClientConfiguration Configuration { get; }
 
-        private readonly string _mySqlString;
-        private readonly bool _encrypted;
-
         private User SystemUser { get; }
 
         private Server MasterServer { get; }
@@ -28,8 +25,6 @@
             Configuration = configuration;
 
             //Initialise and set the MySQL information required for TCAdmin to function.
-            _mySqlString = configuration.MySQLString;
-            _encrypted = configuration.MySQLEncrypted;
             Initialize();
 
             SystemUser = new User(2);
@@ -38,8 +33,27 @@
 
         private void Initialize()
         {
-            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.MySql.ConnectionString.Encrypted", _encrypted.ToString());
-            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.MySql.ConnectionString", _mySqlString);
+            //Database Information
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.MySql.ConnectionString.Encrypted", Configuration.MySQLEncrypted.ToString());
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.MySql.ConnectionString", Configuration.MySQLString);
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Database.Provider", "TCAdmin.DatabaseProviders.MySql.MySqlConnectorManager,TCAdmin.DatabaseProviders.MySql");
+
+            //Providers
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Log.Provider", "TCAdmin.LogProviders.Text.TextFileLogger,TCAdmin.LogProviders.Text");
+
+            //Debugs
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Debug", Configuration.TcAdminSettings.Debug.ToString());
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.DebugSql", Configuration.TcAdminSettings.DebugSQL.ToString());
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.DebugPackets", Configuration.TcAdminSettings.DebugPackets.ToString());
+
+            //Paths
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.LogPath", Configuration.TcAdminSettings.LogPath);
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.CachePath", Configuration.TcAdminSettings.CachePath);
+
+            //Cache
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.EnableCache", Configuration.TcAdminSettings.EnableCache.ToString());
+
+            //Set the instance so we can access it elsewhere.
             Instance = this;
         }
 
