@@ -19,6 +19,10 @@
 
         private Server MasterServer { get; }
 
+        /// <summary>
+        /// The Client that connects to TCAdmin.
+        /// </summary>
+        /// <param name="configuration">The settings for TCAdmin to use.</param>
         public TcAdminClient(TCAdminClientConfiguration configuration)
         {
             //Store Configuration
@@ -31,6 +35,9 @@
             MasterServer = GetMaster();
         }
 
+        /// <summary>
+        /// Initialise the Database, Providers, Debugs, Paths and Cache to be used.
+        /// </summary>
         private void Initialize()
         {
             //Database Information
@@ -57,6 +64,10 @@
             Instance = this;
         }
 
+        /// <summary>
+        /// Gets the Master Server for the TCAdmin Instance.
+        /// </summary>
+        /// <returns><see cref="Server"/></returns>
         private Server GetMaster()
         {
             var servers = Server.GetServers();

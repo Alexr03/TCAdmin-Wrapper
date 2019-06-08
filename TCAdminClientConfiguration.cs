@@ -6,17 +6,32 @@ using System.Threading.Tasks;
 
 namespace TCAdminWrapper
 {
+    /// <summary>
+    /// The core configuration for the TCAdmin Client.
+    /// </summary>
     public class TCAdminClientConfiguration
     {
+        /// <summary>
+        /// This is found in the TCAdmin.Monitor.exe.Config
+        /// </summary>
         public string MySQLString { get; }
 
         public bool MySQLEncrypted { get; }
 
+        /// <summary>
+        /// The Name of this Client.
+        /// </summary>
         public string ApplicationName { get; }
 
+        /// <summary>
+        /// The settings for TCAdmin to follow.
+        /// </summary>
         public TCAdminSettings TcAdminSettings { get; }
     }
 
+    /// <summary>
+    /// The sub class for TCAdmin to follow.
+    /// </summary>
     public class TCAdminSettings
     {
         public bool EnableCache { get; set; }
