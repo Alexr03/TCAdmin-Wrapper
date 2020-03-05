@@ -27,6 +27,14 @@ namespace TCAdminWrapper
         /// The settings for TCAdmin to follow.
         /// </summary>
         public TCAdminSettings TcAdminSettings { get; }
+
+        public TCAdminClientConfiguration(string mySqlString, bool mySqlEncrypted, string applicationName, TCAdminSettings tcAdminSettings = null)
+        {
+            this.MySQLString = mySqlString;
+            this.MySQLEncrypted = mySqlEncrypted;
+            this.ApplicationName = applicationName;
+            this.TcAdminSettings = tcAdminSettings ?? new TCAdminSettings();
+        }
     }
 
     /// <summary>
@@ -34,16 +42,45 @@ namespace TCAdminWrapper
     /// </summary>
     public class TCAdminSettings
     {
-        public bool EnableCache { get; set; }
+        /// <summary>
+        /// Enable the TCAdmin Cache.
+        /// </summary>
+        public bool EnableCache { get; }
 
-        public bool Debug { get; set; }
+        /// <summary>
+        /// Enable debug mode for the application
+        /// </summary>
+        public bool Debug { get; }
 
-        public bool DebugSQL { get; set; }
+        /// <summary>
+        /// Print all SQL debug information.
+        /// </summary>
+        public bool DebugSql { get; }
 
-        public bool DebugPackets { get; set; }
+        /// <summary>
+        /// Print all traffic packets information.
+        /// </summary>
+        public bool DebugPackets { get; }
 
-        public string LogPath { get; set; }
+        /// <summary>
+        /// Set the path to store TCAdmin logs.
+        /// </summary>
+        public string LogPath { get; }
 
-        public string CachePath { get; set; }
+        /// <summary>
+        /// Set the path to store TCAdmin cache.
+        /// </summary>
+        public string CachePath { get; }
+
+        public TCAdminSettings(bool enableCache = true, bool debug = false, bool debugSql = false, bool debugPackets = false,
+            string logPath = "./Logs", string cachePath = "./Cache")
+        {
+            this.EnableCache = enableCache;
+            this.Debug = debug;
+            this.DebugSql = debugSql;
+            this.DebugPackets = debugPackets;
+            this.LogPath = logPath;
+            this.CachePath = cachePath;
+        }
     }
 }

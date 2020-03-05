@@ -50,7 +50,7 @@
 
             //Debugs
             TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.Debug", Configuration.TcAdminSettings.Debug.ToString());
-            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.DebugSql", Configuration.TcAdminSettings.DebugSQL.ToString());
+            TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.DebugSql", Configuration.TcAdminSettings.DebugSql.ToString());
             TCAdmin.SDK.Utility.AppSettings.Set("TCAdmin.DebugPackets", Configuration.TcAdminSettings.DebugPackets.ToString());
 
             //Paths
