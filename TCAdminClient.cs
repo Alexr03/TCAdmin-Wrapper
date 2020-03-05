@@ -14,9 +14,7 @@
         public static TcAdminClient Instance;
 
         public TCAdminClientConfiguration Configuration { get; }
-
-        private User SystemUser { get; }
-
+        
         private Server MasterServer { get; }
 
         /// <summary>
@@ -30,8 +28,7 @@
 
             //Initialise and set the MySQL information required for TCAdmin to function.
             Initialize();
-
-            SystemUser = new User(2);
+            
             MasterServer = GetMaster();
         }
 
