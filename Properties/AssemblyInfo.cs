@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("A Wrapper for the TCAdmin SDK. Makes writing custom applications for the platform in C# easier for the newer users of the software or the language!")]
 [assembly: AssemblyCompany("Balance Servers Inc.")]
 [assembly: AssemblyProduct("TCAdminWrapper")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
