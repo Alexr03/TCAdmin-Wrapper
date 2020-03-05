@@ -14,7 +14,7 @@ release:
     - master
   artifacts:
     paths:
-      - /builds/build/release/TCAdminWrapper.dll
+      - build/release/TCAdminWrapper.dll
   script:
     # The output path is relative to the position of the csproj-file
     - msbuild /p:Configuration="Release" /p:Platform="Any CPU"
