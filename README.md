@@ -13,11 +13,11 @@ Please ensure that you have these libraries installed either inside the program 
  - TCAdmin is installed locally and added to the System **PATH** variable. (Not required if using NuGet)
 
 ## Getting started
-2. Install MySQL.Data 6.6.4 (optional)
-3. Install TCAdmin Binaries via NuGet (optional): `nuget install TCAdmin -Source "https://gitlab.com/api/v4/projects/17210103/packages/nuget/index.json"`
-4. Install TCAdminWrapper via the Releases and add as a new reference to the project.
-5. Open `TCAdmin.Monitor.Config` on your master server (*Located in TCAdmin/Monitor*) find `TCAdmin.Database.MySql.ConnectionString` and copy its value. ***DO NOT SHARE THIS VALUE ANYWHERE IT WILL ALLOW ACCESS TO YOUR TCADMIN DATABASE***
-6. Follow the examples below
+1. Install MySQL.Data 6.6.4 (optional)
+2. Add `https://nexus-repository.openshift.alexr03.dev/repository/tcadmin/` as a source to your NuGet.
+3. Install TCAdminWrapper into your project via NuGet: `nuget Install TCAdminWrapper`
+4. Open `TCAdmin.Monitor.Config` on your master server (*Located in TCAdmin/Monitor*) find `TCAdmin.Database.MySql.ConnectionString` and copy its value. ***DO NOT SHARE THIS VALUE ANYWHERE IT WILL ALLOW ACCESS TO YOUR TCADMIN DATABASE***
+5. Follow the examples below
 
 ##  Examples
 ### Basic Example:

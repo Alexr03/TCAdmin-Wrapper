@@ -6,12 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TCAdminWrapper")]
-[assembly: AssemblyDescription("A Wrapper for the TCAdmin SDK. Makes writing custom applications for the platform in C# easier for the newer users of the software or the language!")]
-[assembly: AssemblyCompany("Balance Servers Inc.")]
+[assembly: AssemblyDescription("A Wrapper for the TCAdmin SDK. Easily create a TCAdmin instance without using a configuration file.")]
+[assembly: AssemblyCompany("Alex Redding")]
 [assembly: AssemblyProduct("TCAdminWrapper")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
