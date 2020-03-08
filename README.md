@@ -14,8 +14,8 @@ Please ensure that you have these libraries installed either inside the program 
 
 ## Getting started
 1. Install MySQL.Data 6.6.4 (optional)
-2. Add `https://nexus-repository.openshift.alexr03.dev/repository/tcadmin/` as a source to your NuGet.
-3. Install TCAdminWrapper into your project via NuGet: `nuget Install TCAdminWrapper`
+2. Add `https://nexus-repository.openshift.alexr03.dev/repository/tcadmin/` as a source to your NuGet. (optional)
+3. Install TCAdminWrapper into your project via NuGet: `Install-Package TCAdminWrapper -Source https://nexus-repository.openshift.alexr03.dev/repository/tcadmin/`
 4. Open `TCAdmin.Monitor.Config` on your master server (*Located in TCAdmin/Monitor*) find `TCAdmin.Database.MySql.ConnectionString` and copy its value. ***DO NOT SHARE THIS VALUE ANYWHERE IT WILL ALLOW ACCESS TO YOUR TCADMIN DATABASE***
 5. Follow the examples below
 
