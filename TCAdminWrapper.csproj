@@ -141,9 +141,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\TCAdminEvents.cs" />
     <Compile Include="Exceptions\GameNotFoundException.cs" />
     <Compile Include="Extensions\GameExtensions.cs" />
     <Compile Include="Extensions\LogManagerExtensions.cs" />
+    <Compile Include="Extensions\ObjectListExtensions.cs" />
     <Compile Include="Extensions\ServerExtensions.cs" />
     <Compile Include="Objects\TaskData.cs" />
     <Compile Include="TCAdminClient.cs" />
