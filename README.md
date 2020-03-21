@@ -33,7 +33,7 @@ This example will show you how to initialize the TCAdminClient class. **You only
                 "TCAdminWrapperTest", new TCAdminSettings());
             TcAdminClient client = new TcAdminClient(configuration);
             
-            Console.WriteLine("Name: " + new TCAdmin.SDK.Objects.Server(1));
+            Console.WriteLine("Name: " + new TCAdmin.SDK.Objects.Server(1).Name);
         }
 ```
 
@@ -55,7 +55,7 @@ When running this you will see more messages in the console until it finally pri
                 "TCAdminWrapperTest", settings);
             TcAdminClient client = new TcAdminClient(configuration);
             
-            Console.WriteLine("Name: " + new TCAdmin.SDK.Objects.Server(1));
+            Console.WriteLine("Name: " + new TCAdmin.SDK.Objects.Server(1).Name);
         }
 ```
 
